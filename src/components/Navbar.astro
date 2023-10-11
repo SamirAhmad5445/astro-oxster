@@ -1,0 +1,36 @@
+---
+import Icon from "astro-icon";
+---
+
+<nav class="flex justify-between text-white [&_li:hover]:text-pink-600">
+  <a href="/" class="text-2xl font-bold">Oxster.</a>
+  <ul class="flex gap-4 font-thin">
+    <li><a href="#home">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#Works">Works</a></li>
+    <li><a href="#services">services</a></li>
+    <li><a href="#team">team</a></li>
+    <li><a href="#blog">blog</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <ul class="flex gap-4">
+    <li>
+      <a href="#facebook">
+        <Icon name="facebook" size={24} />
+        <span class="sr-only">facebook</span>
+      </a>
+    </li>
+    <li>
+      <a href="#twitter">
+        <Icon name="twitter" size={24} />
+        <span class="sr-only">twitter</span>
+      </a>
+    </li>
+    <li>
+      <a href="#linkedin">
+        <Icon name="linkedin" size={24} />
+        <span class="sr-only">linkedin</span>
+      </a>
+    </li>
+  </ul>
+</nav>

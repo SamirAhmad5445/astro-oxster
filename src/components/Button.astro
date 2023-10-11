@@ -1,0 +1,11 @@
+---
+export interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<button class="text-white bg-gradient-to-r from-pink-600 to-red-500 px-16 py-4">
+  { content }
+</button>
