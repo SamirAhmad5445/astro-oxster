@@ -147,4 +147,89 @@ import { features, productImages, mainServices, blogPosts } from "../data";
     </div>
   </section>
   <!--end: Blog section -->
+  <!--start: contact section -->
+  <section id="contact" class="bg-zinc-200">
+    <div class="wrapper-wide grid grid-cols-2 gap-16 py-24">
+      <div class="space-y-4 text-slate-950/75">
+        <h2 class="text-4xl text-slate-950 font-bold">Contact Us</h2>
+        <p class="max-w-[48ch]">
+          We are an perfect UX UI Designing agency building Digital expeiences.
+          And We believe our businesses ara build on Ideas.
+        </p>
+        <div class="space-y-2">
+          <p>Patton Street Caulfield East VIC 3145</p>
+          <p>Email Us: sayhi@yoursite.com</p>
+          <p>Call US: +61 (03) 9414 7288</p>
+        </div>
+        <div class="flex gap-4 [&_a:hover]:text-pink-600">
+          <a href="#">
+            <Icon name="facebook" size={24} />
+            <span class="sr-only">facebook</span>
+          </a>
+          <a href="#">
+            <Icon name="twitter" size={24} />
+            <span class="sr-only">twitter</span>
+          </a>
+          <a href="#">
+            <Icon name="behance" size={24} />
+            <span class="sr-only">behance</span>
+          </a>
+          <a href="#">
+            <Icon name="linkedin" size={24} />
+            <span class="sr-only">linkedin</span>
+          </a>
+          <a href="#">
+            <Icon name="youtube" size={24} />
+            <span class="sr-only">youtube</span>
+          </a>
+        </div>
+      </div>
+      <form class="grid grid-cols-2 gap-4">
+        <label class="relative">
+          <span class="sr-only">your name</span>
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+          />
+          <Icon
+            name="address-card"
+            size={30}
+            class="absolute top-3 right-4 text-slate-400"
+          />
+        </label>
+        <label>
+          <span class="sr-only">your email</span>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+          />
+        </label>
+        <label class="col-span-2">
+          <span class="sr-only">your subject</span>
+          <input
+            type="text"
+            id="subject"
+            placeholder="Your Subject"
+            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+          />
+        </label>
+        <label class="col-span-2 row-span-3">
+          <span class="sr-only">your message</span>
+          <textarea
+            id="message"
+            placeholder="Project Details"
+            class="w-full px-5 py-4 min-h-[120px] placeholder:text-slate-950 placeholder:text-sm resize-none"
+          ></textarea>
+        </label>
+        <div>
+          <Button content="Send Message" />
+        </div>
+      </form>
+    </div>
+  </section>
+  <!--end: contact section -->
 </Layout>
