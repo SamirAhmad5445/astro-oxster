@@ -1,5 +1,12 @@
 ---
 import "../styles/main.css";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -8,14 +15,14 @@ import "../styles/main.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Brand strategy & digital design agency">
+    <meta name="description" content={description}>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Oxster</title>
+    <title>{ title }</title>
   </head>
   <body class="font-poppins">
     <slot />

@@ -14,4 +14,7 @@
   .wrapper {
     @apply w-[min(100%,58rem)] mx-auto px-8;
   }
+  .wrapper-wide {
+    @apply max-w-[1100px] mx-auto;
+  }
 }

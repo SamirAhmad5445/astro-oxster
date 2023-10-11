@@ -6,33 +6,50 @@ import Icon from "astro-icon";
 import Navbar from "../components/Navbar.astro";
 import Button from "../components/Button.astro";
 // page data
-import { features } from "../data"
+import { features, productImages, mainServices, blogPosts } from "../data";
 ---
 
-<Layout>
+<Layout
+  title="Oxster"
+  description="Oxster is brand strategy & digital design agency"
+>
   <!--start: Hero Section -->
-  <section class="flex flex-col h-screen p-4 bg-[url('/assets/header-bg.jpg')] bg-cover bg-center relative">
-    <div class=" absolute inset-0 bg-slate-900/50 z-0" aria-hidden="true"></div>
+  <section
+    class="flex flex-col h-screen p-4 bg-[url('/assets/header-bg.jpg')] bg-cover bg-center relative"
+  >
+    <div class="absolute inset-0 bg-slate-900/50 z-0" aria-hidden="true"></div>
     <header class="isolate">
       <Navbar />
     </header>
-    <div class="isolate flex-1 grid place-content-center text-white text-center">
+    <div
+      class="isolate flex-1 grid place-content-center text-white text-center"
+    >
       <p class="text-xl uppercase">One page creative agency</p>
-      <h1 class="text-5xl font-bold max-w-[20ch] leading-normal">Brand strategy & digital design agency</h1>
+      <h1 class="text-5xl font-bold max-w-[20ch] leading-normal">
+        Brand strategy & digital design agency
+      </h1>
     </div>
   </section>
   <!--end: Hero Section -->
   <!--start: About Section -->
   <section id="about">
     <div class="grid grid-cols-2 bg-slate-100 pt-4 text-lg">
-      <img src="/assets/about-left-img.jpg" alt="">
+      <img
+        src="/assets/about-left-img.jpg"
+        class="h-full object-cover object-center"
+        alt=""
+      />
       <div class="bg-white p-12 space-y-6 grid place-content-center">
         <h2 class="text-4xl text-slate-950 font-bold">Who We Are</h2>
         <p class="text-pink-600 max-w-[42ch]">
-          An award-winning design and development team thar is proud of our work.
+          An award-winning design and development team thar is proud of our
+          work.
         </p>
         <p>
-          objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables
+          objectively innovate empowered manufactured products whereas parallel
+          platforms. Holisticly predominate extensible testing procedures for
+          reliable supply chains. Dramatically engage top-line web services
+          vis-a-vis cutting-edge deliverables
         </p>
         <div>
           <Button content="Read More" />
@@ -44,10 +61,15 @@ import { features } from "../data"
         {
           features.map((feature) => (
             <div class="space-y-3 text-center ">
-              <Icon name={feature.icon} size={62} class="text-pink-600 opacity-80 mx-auto"/>
+              <Icon
+                name={feature.icon}
+                size={58}
+                class="text-pink-600 opacity-80 mx-auto"
+              />
               <h3 class="text-2xl">{feature.name}</h3>
               <p class="opacity-75">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque velit quidem mollitia!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                quis provident laudantium.
               </p>
             </div>
           ))
@@ -56,4 +78,73 @@ import { features } from "../data"
     </div>
   </section>
   <!--end: About Section -->
+  <!--start: Works Section -->
+  <section id="works" class="wrapper space-y-8 text-center py-24">
+    <h2 class="text-4xl text-slate-950 font-bold">Feature Projects</h2>
+    <p class="text-lg opacity-75">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+      sapiente quis facere harum labore? Quis expedita nesciunt, id esse commodi
+      ipsa ut!
+    </p>
+    <dir class="grid grid-cols-3 py-8">
+      {productImages.map((image) => <img src={`/assets/${image}`} alt="" />)}
+    </dir>
+  </section>
+  <!--end: Works Section -->
+  <!--start: Services section -->
+  <section id="services" class="space-y-8 text-center py-20">
+    <div class="wrapper space-y-8">
+      <h2 class="text-4xl text-slate-950 font-bold">Main Services</h2>
+      <p class="text-lg opacity-75">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+        sapiente quis facere harum labore? Quis expedita nesciunt, id esse
+        commodi ipsa ut!
+      </p>
+    </div>
+    <div
+      class="wrapper-wide grid grid-cols-2 place-items-center gap-12 py-8 text-start"
+    >
+      {
+        mainServices.map((service) => (
+          <div class="flex gap-8">
+            <Icon name={service.icon} size={50} class="text-pink-600/75" />
+            <div class="flex-1">
+              <h3 class="text-slate-950 font-bold text-xl">{service.name}</h3>
+              <p class="opacity-75">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tempore quo accusantium id.
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <!--end: Services section -->
+  <!--start: Blog section -->
+  <section id="blog">
+    <div class="wrapper space-y-8 text-center">
+      <h2 class="text-4xl text-slate-950 font-bold">Latest Blogs</h2>
+      <p class="text-lg opacity-75">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
+        sapiente quis facere harum labore? Quis expedita nesciunt, id esse
+        commodi ipsa ut!
+      </p>
+    </div>
+    <div class="wrapper-wide py-24 grid grid-cols-3 gap-8">
+      {
+        blogPosts.map((post) => (
+          <div class="grid gap-4 font-bold">
+            <img src={`/assets/${post.thumbnail}`} alt="" />
+            <small class="text-pink-500/75">{post.date}</small>
+            <h3 class="text-slate-950 text-xl">{post.title}</h3>
+            <a href="#" class="text-pink-600">
+              view more
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <!--end: Blog section -->
 </Layout>
