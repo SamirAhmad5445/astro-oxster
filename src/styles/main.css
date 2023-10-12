@@ -10,6 +10,22 @@
   }
 }
 
+@layer components {
+  .menu {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 350ms;
+  }
+  .menu[aria-expanded="true"] {
+    transform: scaleY(1);
+  }
+  @media screen(md) {
+    .menu {
+      transform: scaleY(1);
+    }
+  }
+}
+
 @layer utilities {
   .wrapper {
     @apply w-[min(100%,58rem)] mx-auto px-8;

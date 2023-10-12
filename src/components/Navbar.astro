@@ -2,9 +2,14 @@
 import Icon from "astro-icon";
 ---
 
-<nav class="flex justify-between text-white [&_li:hover]:text-pink-600">
+<nav
+  class="relative group flex justify-between text-white [&_li:hover]:text-pink-600"
+>
   <a href="/" class="text-2xl font-bold">Oxster.</a>
-  <ul class="flex gap-4 font-thin">
+  <ul
+    class="flex flex-col md:flex-row w-full md:w-auto items-center py-4 md:py-0 gap-4 font-thin absolute min-h-fit bg-slate-200 md:bg-transparent text-slate-950 md:text-current top-full md:static md:min-h-auto menu"
+    id="navMenu"
+  >
     <li><a href="#home">home</a></li>
     <li><a href="#about">about</a></li>
     <li><a href="#Works">Works</a></li>
@@ -32,5 +37,20 @@ import Icon from "astro-icon";
         <span class="sr-only">linkedin</span>
       </a>
     </li>
+    <li class="md:hidden">
+      <button id="menuToggle">
+        <Icon name="menu" size={24} />
+        <span class="sr-only">Open menu</span>
+      </button>
+    </li>
   </ul>
 </nav>
+
+<script>
+  document.getElementById("menuToggle").addEventListener("click", () => {
+    const menu = document.getElementById("navMenu");
+    menu.getAttribute("aria-expanded") === "true"
+      ? menu.setAttribute("aria-expanded", "false")
+      : menu.setAttribute("aria-expanded", "true");
+  });
+</script>
