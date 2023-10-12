@@ -7,7 +7,7 @@ import Icon from "astro-icon";
 >
   <a href="/" class="text-2xl font-bold">Oxster.</a>
   <ul
-    class="flex flex-col md:flex-row w-full md:w-auto items-center py-4 md:py-0 gap-4 font-thin absolute min-h-fit bg-slate-200 md:bg-transparent text-slate-950 md:text-current top-full md:static md:min-h-auto menu"
+    class="flex flex-col md:flex-row w-full md:w-auto items-center py-4 md:py-0 gap-4 font-thin absolute min-h-fit bg-slate-200 md:bg-transparent text-slate-950 md:text-current top-[140%] md:static md:min-h-auto rounded-xl menu"
     id="navMenu"
   >
     <li><a href="#home">home</a></li>
@@ -21,25 +21,26 @@ import Icon from "astro-icon";
   <ul class="flex gap-4">
     <li>
       <a href="#facebook">
-        <Icon name="facebook" size={24} />
+        <Icon name="facebook" size={28} />
         <span class="sr-only">facebook</span>
       </a>
     </li>
     <li>
       <a href="#twitter">
-        <Icon name="twitter" size={24} />
+        <Icon name="twitter" size={28} />
         <span class="sr-only">twitter</span>
       </a>
     </li>
     <li>
       <a href="#linkedin">
-        <Icon name="linkedin" size={24} />
+        <Icon name="linkedin" size={28} />
         <span class="sr-only">linkedin</span>
       </a>
     </li>
     <li class="md:hidden">
       <button onclick="toggleMenu()">
-        <Icon name="menu" size={24} />
+        <Icon name="menu" size={28} class="group-[:has([aria-expanded='true'])]:hidden" />
+        <Icon name="close" size={28} class="hidden group-[:has([aria-expanded='true'])]:block" />
         <span class="sr-only">Open menu</span>
       </button>
     </li>
