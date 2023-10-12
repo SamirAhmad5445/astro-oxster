@@ -37,20 +37,11 @@ import Icon from "astro-icon";
         <span class="sr-only">linkedin</span>
       </a>
     </li>
-    <li class="md:hidden">
+    <!-- <li class="md:hidden">
       <button id="menuToggle">
         <Icon name="menu" size={24} />
         <span class="sr-only">Open menu</span>
       </button>
-    </li>
+    </li> -->
   </ul>
 </nav>
-
-<script>
-  document.getElementById("menuToggle").addEventListener("click", () => {
-    const menu = document.getElementById("navMenu");
-    menu.getAttribute("aria-expanded") === "true"
-      ? menu.setAttribute("aria-expanded", "false")
-      : menu.setAttribute("aria-expanded", "true");
-  });
-</script>

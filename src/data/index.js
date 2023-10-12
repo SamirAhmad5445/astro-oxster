@@ -77,3 +77,9 @@ export const blogPosts = [
     date: "Febuary 13, 2018",
   },
 ];
+
+export const toggleMenu = () => {
+  document.getElementById("navMenu").getAttribute("aria-expanded") === "true"
+    ? menu.setAttribute("aria-expanded", "false")
+    : menu.setAttribute("aria-expanded", "true");
+};
