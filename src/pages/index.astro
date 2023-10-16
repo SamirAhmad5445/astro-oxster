@@ -47,7 +47,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
         </p>
         <p>
           objectively innovate empowered manufactured products whereas parallel
-          platforms. Holisticly predominate extensible testing procedures for
+          platforms. Holistically predominate extensible testing procedures for
           reliable supply chains. Dramatically engage top-line web services
           vis-a-vis cutting-edge deliverables
         </p>
@@ -58,7 +58,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
     </div>
     <div class="bg-zinc-950 text-white">
       <div
-        class="w-[min(100%,92rem)] mx-auto flex flex-col lg:flex-row gap-4 py-16 px-16 lg:px-8"
+        class="w-[min(100%,92rem)] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 py-16 px-16 lg:px-8"
       >
         {
           features.map((feature) => (
@@ -69,7 +69,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
                 class="text-pink-600 opacity-80 mx-auto"
               />
               <h3 class="text-2xl">{feature.name}</h3>
-              <p class="opacity-75">
+              <p class="max-w-[32ch] mx-auto opacity-75">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
                 quis provident laudantium.
               </p>
@@ -102,7 +102,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
   </section>
   <!--end: Works Section -->
   <!--start: Services section -->
-  <section id="services" class="space-y-8 text-center py-20">
+  <section id="services" class="space-y-8 text-center py-16">
     <div class="wrapper space-y-8">
       <h2 class="text-4xl text-slate-950 font-bold">Main Services</h2>
       <p class="text-lg opacity-75">
@@ -132,8 +132,8 @@ import { features, productImages, mainServices, blogPosts } from "../data";
   </section>
   <!--end: Services section -->
   <!--start: Blog section -->
-  <section id="blog">
-    <div class="wrapper space-y-8 text-center">
+  <section id="blog" class="pt-24">
+    <div class="wrapper space-y-4 text-center">
       <h2 class="text-4xl text-slate-950 font-bold">Latest Blogs</h2>
       <p class="text-lg opacity-75">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
@@ -142,7 +142,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
       </p>
     </div>
     <div
-      class="wrapper-wide mx-auto py-24 px-12 md:px-4 grid grid-cols-1 md:grid-cols-3 gap-8"
+      class="wrapper-wide mx-auto py-16 px-12 md:px-4 grid grid-cols-1 md:grid-cols-3 gap-8"
     >
       {
         blogPosts.map((post) => (
@@ -167,7 +167,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
       <div class="space-y-4 text-slate-950/75">
         <h2 class="text-4xl text-slate-950 font-bold">Contact Us</h2>
         <p class="max-w-[48ch]">
-          We are an perfect UX UI Designing agency building Digital expeiences.
+          We are an perfect UX UI Designing agency building Digital experiences.
           And We believe our businesses ara build on Ideas.
         </p>
         <div class="space-y-2">
