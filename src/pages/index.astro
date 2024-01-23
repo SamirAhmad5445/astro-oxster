@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar.astro";
 import Button from "../components/Button.astro";
 // page data
 import { features, productImages, mainServices, blogPosts } from "../data";
+import ContactFrom from "../components/ContactFrom.astro";
 ---
 
 <Layout
@@ -198,51 +199,7 @@ import { features, productImages, mainServices, blogPosts } from "../data";
           </a>
         </div>
       </div>
-      <form class="grid grid-cols-2 gap-4">
-        <label class="relative">
-          <span class="sr-only">your name</span>
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
-          />
-          <Icon
-            name="address-card"
-            size={30}
-            class="absolute top-3 right-4 text-slate-400"
-          />
-        </label>
-        <label>
-          <span class="sr-only">your email</span>
-          <input
-            type="email"
-            id="email"
-            placeholder="Your Email"
-            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
-          />
-        </label>
-        <label class="col-span-2">
-          <span class="sr-only">your subject</span>
-          <input
-            type="text"
-            id="subject"
-            placeholder="Your Subject"
-            class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
-          />
-        </label>
-        <label class="col-span-2 row-span-3">
-          <span class="sr-only">your message</span>
-          <textarea
-            id="message"
-            placeholder="Project Details"
-            class="w-full px-5 py-4 min-h-[120px] placeholder:text-slate-950 placeholder:text-sm resize-none"
-          ></textarea>
-        </label>
-        <div class="grid col-span-2 lg:block lg:col-span-1">
-          <Button content="Send Message" />
-        </div>
-      </form>
+      <ContactFrom />
     </div>
   </section>
   <!--end: contact section -->

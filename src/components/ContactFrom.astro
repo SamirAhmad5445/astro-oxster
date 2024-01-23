@@ -1,0 +1,133 @@
+---
+import Button from "./Button.astro";
+import Icon from "astro-icon";
+---
+
+<form id="contactForm" class="grid grid-cols-2 gap-4">
+  <label class="relative">
+    <span class="sr-only">your name</span>
+    <input
+      type="text"
+      id="username"
+      placeholder="Your Name"
+      class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+    />
+    <Icon
+      name="address-card"
+      size={30}
+      class="absolute top-3 right-4 text-slate-400"
+    />
+  </label>
+  <label>
+    <span class="sr-only">your email</span>
+    <input
+      type="email"
+      id="email"
+      placeholder="Your Email"
+      class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+    />
+  </label>
+  <label class="col-span-2">
+    <span class="sr-only">your subject</span>
+    <input
+      type="text"
+      id="subject"
+      placeholder="Your Subject"
+      class="w-full px-5 py-4 placeholder:text-slate-950 placeholder:text-sm"
+    />
+  </label>
+  <label class="col-span-2 row-span-3">
+    <span class="sr-only">your message</span>
+    <textarea
+      id="message"
+      placeholder="Project Details"
+      class="w-full px-5 py-4 min-h-[120px] placeholder:text-slate-950 placeholder:text-sm resize-none"
+    ></textarea>
+  </label>
+  <div class="grid col-span-2 lg:block lg:col-span-1">
+    <Button content="Send Message" />
+  </div>
+</form>
+<div id="notificationBox" class="notification-box"></div>
+
+<script lang="js">
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get the input values
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // validate username
+    if (username.length < 3) {
+      alert("Username must be at least 3 characters long");
+      return;
+    }
+
+    // validate email
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    // validate subject
+    if (!subject) {
+      alert("Please enter a subject");
+      return;
+    }
+
+    // validate message
+    if (!message) {
+      alert("Please enter a message");
+      return;
+    }
+
+    // Pass the input values to setMessage function
+    setMessage(username, email, subject, message);
+  });
+
+  async function setMessage(username, email, subject, message) {
+    const apiURL = "https://mail-fjc1.onrender.com/mail";
+    const hostMailAddress = "samirahmad.dev@gmail.com";
+
+    let data = await fetch(apiURL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        to: hostMailAddress,
+        subject: subject,
+        body: {
+          username: username,
+          email: email,
+          phone: undefined,
+          message: `<blockquote>From: <a href="${location.href}">Astro Oxster</a></blockquote> <br /> ${message}`,
+        },
+      }),
+    });
+
+    if ({ ...(await data.json()) }.msg === "mail sent") {
+      console.log("mission success");
+      showNotification("success");
+    } else {
+      console.log("mission failed");
+      showNotification("failed");
+    }
+  }
+
+  function showNotification(stat) {
+    const msg = document.createElement("div");
+    msg.innerText =
+      stat === "success"
+        ? "Got it! Thank you for the mail✅"
+        : "Oops! something went wrong😓";
+    msg.className = `notification ${stat}`;
+    document.getElementById("notificationBox").append(msg);
+    setTimeout(() => {
+      document.getElementById("notificationBox").removeChild(msg);
+    }, 3250);
+  }
+</script>
